@@ -108,10 +108,7 @@ class NoteController extends Controller
     public function search()
     {
         $data = $_GET['title'];
-
         if($notes = Note::where('title', 'like', "%{$data}%")->get()){
-
-            dd($notes);
             return response()->json([
                 'data' => $notes
             ],200
